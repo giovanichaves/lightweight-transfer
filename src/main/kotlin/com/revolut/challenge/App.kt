@@ -1,8 +1,21 @@
 package com.revolut.challenge
 
-class App {
+import com.revolut.challenge.transfer.TransferController
+import io.javalin.Javalin
+
+class App(private val port: Int) {
+
+    fun init(): Javalin {
+        val app = Javalin.create { config ->
+            config.defaultContentType = "application/json"
+        }.start(port)
+
+        TransferController(app)
+
+        return app
+    }
 }
 
 fun main(args: Array<String>) {
-    print("Hello")
+    App(7000).init()
 }
