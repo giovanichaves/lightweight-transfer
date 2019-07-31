@@ -30,7 +30,6 @@ class App(private val port: Int) {
 
         return OpenApiOptions(applicationInfo).path("/swagger-docs")
             .swagger(SwaggerOptions("/swagger").title("My Swagger Documentation"))
-
     }
 }
 

@@ -29,7 +29,7 @@ class TransferController(
 }
 
 data class TransferRequest(
-    val from: String,
-    val to: String,
+    val fromAccount: String,
+    val toAccount: String,
     val amount: Int
 )
