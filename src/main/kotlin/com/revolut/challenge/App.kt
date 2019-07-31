@@ -12,6 +12,7 @@ class App(private val port: Int) {
 
     fun init(): Javalin {
         val app = Javalin.create {
+            it.enableWebjars()
             it.showJavalinBanner = false
             it.defaultContentType = "application/json"
             it.registerPlugin(OpenApiPlugin(getOpenApiOptions()))
